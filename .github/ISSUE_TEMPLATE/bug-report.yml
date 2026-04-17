@@ -1,0 +1,53 @@
+name: Bug Report
+description: Create a report to help us improve Chrome Resizer Extension
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: affected-area
+    attributes:
+      label: Affected area
+      description: What part of the extension is affected? (e.g., Popup UI, Background script, Hotkeys)
+    validations:
+      required: true
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      description: What type of issue are you experiencing?
+      options:
+        - incorrect behavior
+        - crash
+        - performance
+        - security
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Click on the extension icon
+        2. Set custom resolution to X
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+  - type: textarea
+    id: environment-info
+    attributes:
+      label: Environment info
+      description: OS, Chrome version, extension version.

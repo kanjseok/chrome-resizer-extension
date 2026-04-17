@@ -1,0 +1,35 @@
+# Enforce consistent line endings across all platforms
+* text=auto eol=lf
+
+# Source files
+*.js   text eol=lf diff=javascript
+*.mjs  text eol=lf diff=javascript
+*.cjs  text eol=lf diff=javascript
+*.json text eol=lf
+*.html text eol=lf diff=html
+*.css  text eol=lf diff=css
+*.md   text eol=lf diff=markdown linguist-documentation
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Shell scripts must keep LF
+*.sh text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.crx binary
+
+# Exclude dev-only files from release archives
+.github/        export-ignore
+.gitignore      export-ignore
+.gitattributes  export-ignore
+scripts/        export-ignore
+CHANGELOG.md    export-ignore
+CONTRIBUTING.md export-ignore

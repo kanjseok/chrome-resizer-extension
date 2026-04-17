@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chrome Resizer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="app-title">Chrome Resizer</h1>
+      <p class="app-subtitle">Instantly resizes the current browser window</p>
+    </header>
+
+    <section class="current-size">
+      <span class="label">Current Size</span>
+      <span id="currentSize" class="value">-</span>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Presets</h2>
+        <span class="hint">Shortcut: Alt+Shift+1~4</span>
+      </div>
+      <ul id="presetList" class="preset-list"></ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Custom Size</h2>
+      <form id="customForm" class="custom-form">
+        <div class="input-row">
+          <label class="input-field">
+            <span>Width</span>
+            <input
+              type="number"
+              id="customWidth"
+              min="100"
+              max="10000"
+              placeholder="1280"
+              required
+            />
+          </label>
+          <span class="x-mark">×</span>
+          <label class="input-field">
+            <span>Height</span>
+            <input
+              type="number"
+              id="customHeight"
+              min="100"
+              max="10000"
+              placeholder="720"
+              required
+            />
+          </label>
+        </div>
+        <div class="button-row">
+          <button type="submit" class="btn btn-primary">Apply</button>
+          <button type="button" id="saveAsPreset" class="btn btn-secondary">
+            Save as Preset
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">Window Position</h2>
+        <button type="button" id="posNoneBtn" class="btn btn-link btn-link-small">No Change</button>
+      </div>
+      <div class="position-grid-wrapper">
+        <div class="position-grid" id="positionGrid">
+          <button type="button" class="pos-cell" data-pos="top-left" aria-label="Top-Left" title="Top-Left"></button>
+          <button type="button" class="pos-cell" data-pos="top-center" aria-label="Top-Center" title="Top-Center"></button>
+          <button type="button" class="pos-cell" data-pos="top-right" aria-label="Top-Right" title="Top-Right"></button>
+          <button type="button" class="pos-cell" data-pos="left-center" aria-label="Left-Center" title="Left-Center"></button>
+          <button type="button" class="pos-cell" data-pos="center" aria-label="Center" title="Center"></button>
+          <button type="button" class="pos-cell" data-pos="right-center" aria-label="Right-Center" title="Right-Center"></button>
+          <button type="button" class="pos-cell" data-pos="bottom-left" aria-label="Bottom-Left" title="Bottom-Left"></button>
+          <button type="button" class="pos-cell" data-pos="bottom-center" aria-label="Bottom-Center" title="Bottom-Center"></button>
+          <button type="button" class="pos-cell" data-pos="bottom-right" aria-label="Bottom-Right" title="Bottom-Right"></button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <button id="resetPresets" class="btn btn-link">Restore Default Presets</button>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
